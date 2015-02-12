@@ -61,27 +61,54 @@
 		var sendTo = "Send to ";
 		
 		if (scenarioDisplayName == "emergency"){
-			if (emergencyMessageText == "" || emergencyContact1Name == "" || emergencyContact1Number == "" || emergencyContact2Name == "" || emergencyContact2Number == ""){
+			if (emergencyMessageText == ""){
 				$("#messageDisplay").text("You do not have the message setted up for this scenario. Please go to the settings page to change your settings.");
-				
 			}
-			else {
+			if (emergencyContact1Name == "" || emergencyContact1Number == ""){
+				$("#contact1Button").text("You have not finished setting up this contact");
+			}
+			if (emergencyContact2Name == "" || emergencyContact2Number == ""){
+				$("#contact2Button").text("You have not finished setting up this contact");
+			}
+			if (emergencyMessageText != "" && emergencyContact1Name != "" && emergencyContact1Number != "" && emergencyContact2Name != "" && emergencyContact2Number != "")
+			{
 				$("#messageDisplay").text(emergencyMessageText);
 				$("#contact1Button").text(sendTo.concat(emergencyContact1Name));
 				$("#contact2Button").text(sendTo.concat(emergencyContact2Name));
 			}
-
 			
 		}
 		else if (scenarioDisplayName == "scenario1"){
-			$("#messageDisplay").text(scenario1MessageText);
-			$("#contact1Button").text(sendTo.concat(scenario1Contact1Name));
-			$("#contact2Button").text(sendTo.concat(scenario1Contact2Name));
+			if (scenario1MessageText == ""){
+				$("#messageDisplay").text("You do not have the message setted up for this scenario. Please go to the settings page to change your settings.");
+			}
+			if (scenario1Contact1Name == "" || scenario1Contact1Number == ""){
+				$("#contact1Button").text("You have not finished setting up this contact");
+			}
+			if (scenario1Contact2Name == "" || scenario1Contact2Number == ""){
+				$("#contact2Button").text("You have not finished setting up this contact");
+			}
+			if (scenario1MessageText != "" && sceanrio1Contact1Name != "" && scenario1Contact1Number != "" && scenario1Contact2Name != "" && scenario1Contact2Number != "")
+			{
+				$("#messageDisplay").text(scenario1MessageText);
+				$("#contact1Button").text(sendTo.concat(scenario1Contact1Name));
+				$("#contact2Button").text(sendTo.concat(scenario1Contact2Name));
+			}
 		}
 		else if (scenarioDisplayName == "scenario2"){
-			$("#messageDisplay").text(scenario2MessageText);
-			$("#contact1Button").text(sendTo.concat(scenario2Contact1Name));
-			$("#contact2Button").text(sendTo.concat(scenario2Contact2Name));
+			if (scenario2MessageText == ""){
+				$("#messageDisplay").text("You do not have the message setted up for this scenario. Please go to the settings page to change your settings.");
+			}
+			if (scenario2Contact1Name == "" || scenario2Contact1Number == ""){
+				$("#contact1Button").text("You have not finished setting up this contact");
+			}
+			if (scenario2Contact2Name == "" || scenario2Contact2Number == ""){
+				$("#contact2Button").text("You have not finished setting up this contact");
+			}
+			if (scenario2MessageText != "" && sceanrio2Contact1Name != "" && scenario2Contact1Number != "" && scenario2Contact2Name != "" && scenario2Contact2Number != ""){
+				$("#messageDisplay").text(scenario2MessageText);
+				$("#contact1Button").text(sendTo.concat(scenario2Contact1Name));
+				$("#contact2Button").text(sendTo.concat(scenario2Contact2Name));}
 		}
 	}
 	
